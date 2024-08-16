@@ -4,39 +4,39 @@ import { Icon } from "astro-icon/components";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "Cursos Técnicos y Administrativos",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
+      "Ofrecemos una variedad de cursos especializados en áreas técnicas y administrativas, adaptados a las necesidades del mercado laboral actual",
+    icon: "certificate",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Apoyo Académico Integral",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
-  },
-  {
-    title: "On-Demand Components",
-    description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
+      "Brindamos asistencia académica personalizada a estudiantes de todos los niveles, ayudándoles con asesorías para con sus tareas, exámenes, investigaciones, y más.",
     icon: "bx:bxs-data",
   },
   {
-    title: "Broad Integration",
+    title: "Asesoría y Desarrollo de Tesis",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
-  },
-  {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+      "Asesoría especializada y personalizada en la elaboración de tesis, garantizando un trabajo de calidad y con un enfoque metodológico sólido.",
     icon: "bx:bxs-file-find",
   },
   {
-    title: "Community",
+    title: "Eventos y Talleres Especializados",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+      "Organizamos talleres, seminarios y eventos educativos diseñados para complementar la formación de nuestros estudiantes.",
+    icon: "calendar-event",
+  },
+  {
+    title: "Plataforma de Recursos y Materiales Educativos",
+    description:
+      "Ofrecemos acceso a una plataforma en línea donde los estudiantes pueden encontrar recursos educativos como guías, videos, y otros materiales de estudio.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Comunidad",
+    description:
+      "Nuestro equipo está conformado por personal capacitado y amigable, será nuestra prioridad responder tu dudas y ayudarte a ser la mejor versión de ti.",
     icon: "bx:bxs-user",
   },
 ];
@@ -44,11 +44,14 @@ const features = [
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
+    Todo lo que necesitas y nosotros podemos dar.
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
+  <p class="text-lg mt-4 text-slate-600 dark:text-gray-300">
+    En AAplus nos enorgullecemos de ofrecer una amplia gama de <strong
+      >servicios</strong
+    >
+    educativos diseñados para satisfacer las necesidades de nuestros estudiantes
+    y ayudarles a alcanzar sus metas académicas y profesionales.
   </p>
 </div>
 
@@ -61,7 +64,9 @@ const features = [
         </div>
         <div>
           <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+          <p class="text-slate-500 mt-2 leading-relaxed dark:text-gray-400">
+            {item.description}
+          </p>
         </div>
       </div>
     ))
