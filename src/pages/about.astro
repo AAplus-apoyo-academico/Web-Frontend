@@ -14,21 +14,72 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 <Layout title="About">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="title">Acerca de nosotros</Fragment>
+      <Fragment slot="desc"
+        >Aquí sabrás ¿Quienes somos? ¿Qué hacemos? Y nuestra visión a futuro</Fragment
+      >
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+    <section class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800 dark:text-white">
-        Empowering the world with Astro.
+        ¿Quiénes somos?
       </h2>
       <p class="text-lg leading-relaxed text-slate-500 dark:text-gray-400">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        AAPLUS+ es un centro de apoyo académico innovador y comprometido con el
+        éxito educativo de nuestros estudiantes. Fundada con la visión de
+        ofrecer servicios de alta calidad y adaptados a las necesidades actuales
+        del mercado, AAPLUS+ se ha convertido en un referente para aquellos que
+        buscan avanzar en su formación técnica y académica. Contamos con un
+        equipo de profesionales experimentados que están dedicados a
+        proporcionar una educación personalizada y eficaz.
       </p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+    </section>
+
+    <section class="flex flex-col gap-3 mx-auto max-w-4xl mt-16 text-center">
+      <h2 class="font-bold text-3xl text-gray-800 dark:text-white">
+        ¿Qué hacemos?
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500 dark:text-gray-400">
+        En AAPLUS+, brindamos una amplia gama de servicios educativos que
+        incluyen cursos técnicos y administrativos, apoyo académico integral en
+        todos los niveles, y asesoría especializada en el desarrollo de tesis.
+        Nos enfocamos en proporcionar las herramientas y conocimientos
+        necesarios para que nuestros estudiantes puedan alcanzar sus metas
+        académicas y profesionales. Además, nuestros programas están avalados
+        por entidades reconocidas, asegurando que la formación recibida tenga un
+        impacto significativo en la carrera de nuestros estudiantes.
+      </p>
+    </section>
+
+    <section class="flex gap-4 flex-col md:flex-row">
+      <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+        <h2 class="font-bold text-3xl text-gray-800 dark:text-white">Visión</h2>
+        <p class="text-lg leading-relaxed text-slate-500 dark:text-gray-400">
+          Nuestra visión es convertirnos en el centro de apoyo académico líder a
+          nivel nacional, reconocido por la excelencia de nuestros servicios y
+          el impacto positivo que generamos en la vida de nuestros estudiantes.
+          Aspiramos a ser la primera opción para quienes buscan formación
+          técnica y académica de calidad, contribuyendo al crecimiento
+          profesional y personal de cada uno de nuestros estudiantes, y
+          preparándolos para enfrentar con éxito los desafíos del mundo laboral
+          actual.
+        </p>
+      </div>
+      <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+        <h2 class="font-bold text-3xl text-gray-800 dark:text-white">Misión</h2>
+        <p class="text-lg leading-relaxed text-slate-500 dark:text-gray-400">
+          Nuestra misión en AAPLUS+ es potenciar el desarrollo académico y
+          profesional de nuestros estudiantes mediante la oferta de servicios
+          educativos de alta calidad, personalizados e innovadores. Nos
+          comprometemos a acompañar a cada estudiante en su camino hacia el
+          éxito, proporcionando las herramientas, conocimientos y apoyo
+          necesarios para que puedan alcanzar sus objetivos en un entorno
+          competitivo y en constante evolución.
+        </p>
+      </div>
+    </section>
+
+    <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
@@ -54,6 +105,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         ))
       }
-    </div>
+    </div> -->
   </Container>
 </Layout>
