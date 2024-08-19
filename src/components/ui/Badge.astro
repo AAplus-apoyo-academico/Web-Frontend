@@ -1,0 +1,12 @@
+---
+const { size, color, bordered = false, pill = false } = Astro.props;
+
+const borderedClass = bordered
+  ? `dark:bg-gray-700 border border-${color}-400`
+  : `dark:bg-${color}-900`;
+---
+
+<span
+  class=`bg-${color}-300 text-${color}-800 text-${size} font-medium px-2.5 py-0.5 ${pill ? 'rounded-full':'rounded'} dark:text-${color}-300 ${borderedClass}`>
+  <slot />
+</span>

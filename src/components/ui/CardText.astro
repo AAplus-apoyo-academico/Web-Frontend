@@ -1,15 +1,30 @@
 ---
-const { title, link } = Astro.props;
+import Title from "./Title.astro";
+import Tooltip from "./Tooltip.astro";
+
+const { key, title, description } = Astro.props;
+const courseLimitDescription = 100;
+const setShortDescription = description.length > courseLimitDescription;
 ---
 
-<a
-  href={link}
-  class="block p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-  <h5
-    class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-    {title}
-  </h5>
-  <p class="font-normal text-base text-gray-700 dark:text-gray-400">
-    <slot />
+<div
+  class="block p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-900 flex flex-col gap-1 transition">
+  <Title tag="h5" margin="mb-2" size="xl" boldLevel="bold" title={title} />
+  <p
+    class="font-normal text-base text-gray-700 dark:text-gray-400 mb-4"
+    {...setShortDescription && {
+      "data-tooltip-target": `tooltip-course-${key}`,
+    }}>
+    {
+      setShortDescription
+        ? description.slice(0, courseLimitDescription) + "..."
+        : description
+    }
+    {
+      setShortDescription && (
+        <Tooltip tooltipID=`tooltip-course-${key}`>{description}</Tooltip>
+      )
+    }
   </p>
-</a>
+  <slot name="button" />
+</div>

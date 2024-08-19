@@ -1,0 +1,21 @@
+---
+const {
+  title,
+  tag: Tag = "h1",
+  margin = "mb-4",
+  size = "xl",
+  boldLevel = "extrabold",
+  colorLigth = "gray",
+  colorDark = "white",
+  extraClassName,
+  ...extraProps
+} = Astro.props;
+---
+
+<Tag
+  class=`${margin} text-${size} tracking-tight font-${boldLevel} text-${colorLigth}-900 dark:text-${colorDark} ${extraClassName}`
+  {...extraProps}>
+  <slot name="before" />
+  <span>{title}</span>
+  <slot name="after" />
+</Tag>

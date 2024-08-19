@@ -1,0 +1,10 @@
+---
+const { href = "#", bgc, margin, size } = Astro.props;
+---
+
+<a
+  href={href}
+  class=`inline-flex items-center px-3 py-2 ${margin} text-${size} font-medium text-center text-white bg-${bgc}-700 rounded-lg hover:bg-${bgc}-800 focus:ring-4 focus:outline-none focus:ring-${bgc}-300 dark:bg-${bgc}-600 dark:hover:bg-${bgc}-700 dark:focus:ring-${bgc}-800`>
+  <slot name="content" />
+  <slot name="icon" />
+</a>

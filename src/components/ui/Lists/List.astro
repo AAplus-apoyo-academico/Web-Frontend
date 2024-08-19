@@ -1,0 +1,24 @@
+---
+import Title from "../Title.astro";
+
+const { title, extraClassName } = Astro.props;
+const renderTitle = (title || title?.length) > 0 ? true : false;
+---
+
+<div class=`${extraClassName}`>
+  {
+    renderTitle && (
+      <Title
+        tag="h4"
+        size="xl"
+        margin="mb-5"
+        extraClassName="flex items-center gap-2"
+        title={title}>
+        <slot name="icon" slot="before" />
+      </Title>
+    )
+  }
+  <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
+    <slot />
+  </ul>
+</div>

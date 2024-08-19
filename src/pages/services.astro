@@ -3,6 +3,17 @@ import Container from "@components/Container.astro";
 import Sectionhead from "@components/SectionHead.astro";
 import Layout from "@layouts/Layout.astro";
 import CheckIcon from "@components/ui/icons/Check.astro";
+import List from "@components/ui/Lists/List.astro";
+import Item from "@components/ui/Lists/Item.astro";
+import Badge from "@components/ui/Badge.astro";
+import Title from "@components/ui/Title.astro";
+import Certificate from "@components/ui/icons/Certificate.astro";
+import Link from "@components/ui/Link.astro";
+import { COURSES } from "../consts/courses";
+import CardText from "@components/ui/CardText.astro";
+import SearchIcon from "@components/ui/icons/Search.astro";
+import ContactButton from "@components/ui/Courses/ContactButton.astro";
+import ArrowRigth from "@components/ui/icons/ArrowRigth.astro";
 ---
 
 <Layout title="Servicios">
@@ -12,13 +23,26 @@ import CheckIcon from "@components/ui/icons/Check.astro";
       <Fragment slot="desc">Conoce nuestra oferta académica.</Fragment>
     </Sectionhead>
 
-    <section class="bg-white dark:bg-gray-800 rounded-lg mt-4">
+    <section
+      class="bg-gray-50 dark:bg-gray-800 rounded-tr-3xl rounded-bl-3xl mt-4 relative mb-6">
+      <Certificate
+        extraClassName="w-20 h-20 absolute block -translate-x-1/3 -translate-y-1/3 -rotate-45"
+      />
       <article class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div class="">
-          <h2
-            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-            Convenio con Universidad Yacambú
-          </h2>
+          <Title
+            tag="h2"
+            size="4xl"
+            extraClassName="flex items-center gap-2 flex-wrap"
+            title="Convenio con Universidad Yacambú">
+            <Badge
+              size="xs"
+              color="blue"
+              slot="after"
+              bordered={true}
+              pill={true}>IMPORTANTE</Badge
+            >
+          </Title>
           <p
             class="mb-8 font-light text-gray-500 sm:text-xl dark:text-gray-400">
             Hemos establecido un convenio estratégico con la prestigiosa
@@ -30,10 +54,7 @@ import CheckIcon from "@components/ui/icons/Check.astro";
             nivel al cuarto nivel de grado, permitiéndoles acceder a especializaciones
             y, posteriormente, a maestrías profesionales de grado.
           </p>
-          <h2
-            class="mb-4 text-2xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-            Beneficios clave del convenio
-          </h2>
+          <Title tag="h3" size="2xl" title="Beneficios clave del convenio" />
           <div
             class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div class="sm:hidden">
@@ -96,47 +117,26 @@ import CheckIcon from "@components/ui/icons/Check.astro";
                 id="stats"
                 role="tabpanel"
                 aria-labelledby="stats-tab">
-                <div class="flex gap-4 justify-between">
-                  <div>
-                    <h2
-                      class="mb-5 text-xl font-extrabold tracking-tight text-gray-900 dark:text-white flex gap-2 items-center">
-                      <CheckIcon />
-                      Especialización
-                    </h2>
-                    <ul
-                      role="list"
-                      class="space-y-4 text-gray-500 dark:text-gray-400">
-                      <li
-                        class="flex space-x-2 rtl:space-x-reverse items-center">
-                        <span class="leading-tight">
-                          Los tecnólogos pueden avanzar del tercer al cuarto
-                          nivel de grado a través de programas de
-                          especialización, abriendo la puerta a nuevas
-                          oportunidades académicas y profesionales.
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h2
-                      class="mb-5 text-xl font-extrabold tracking-tight text-gray-900 dark:text-white flex gap-2 items-center">
-                      <CheckIcon />
-                      Maestrías Profesionales
-                    </h2>
-                    <ul
-                      role="list"
-                      class="space-y-4 text-gray-500 dark:text-gray-400">
-                      <li
-                        class="flex space-x-2 rtl:space-x-reverse items-center">
-                        <span class="leading-tight">
-                          Con este avance, los tecnólogos están habilitados para
-                          inscribirse en maestrías profesionales de grado, lo
-                          que les permite obtener títulos de 4to. nivel con
-                          reconocimiento internacional.
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
+                <div class="flex gap-4 justify-between flex-wrap">
+                  <List title="Especialización">
+                    <CheckIcon slot="icon" />
+                    <Item>
+                      Los tecnólogos pueden avanzar del tercer al cuarto nivel
+                      de grado a través de programas de especialización,
+                      abriendo la puerta a nuevas oportunidades académicas y
+                      profesionales.
+                    </Item>
+                  </List>
+
+                  <List title="Maestrías Profesionales">
+                    <CheckIcon slot="icon" />
+                    <Item>
+                      Con este avance, los tecnólogos están habilitados para
+                      inscribirse en maestrías profesionales de grado, lo que
+                      les permite obtener títulos de 4to. nivel con
+                      reconocimiento internacional.
+                    </Item>
+                  </List>
                 </div>
               </div>
               <div
@@ -144,247 +144,171 @@ import CheckIcon from "@components/ui/icons/Check.astro";
                 id="about"
                 role="tabpanel"
                 aria-labelledby="about-tab">
-                <h2
-                  class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-                  We invest in the world’s potential
-                </h2>
-                <!-- List -->
-                <ul
-                  role="list"
-                  class="space-y-4 text-gray-500 dark:text-gray-400">
-                  <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg
-                      class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path
-                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
-                      ></path>
-                    </svg>
-                    <span class="leading-tight"
-                      >Dynamic reports and dashboards</span
-                    >
-                  </li>
-                  <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg
-                      class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path
-                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
-                      ></path>
-                    </svg>
-                    <span class="leading-tight">Templates for everyone</span>
-                  </li>
-                  <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg
-                      class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path
-                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
-                      ></path>
-                    </svg>
-                    <span class="leading-tight">Development workflow</span>
-                  </li>
-                  <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg
-                      class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path
-                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
-                      ></path>
-                    </svg>
-                    <span class="leading-tight"
-                      >Limitless business automation</span
-                    >
-                  </li>
-                </ul>
+                <div class="flex gap-4 justify-between flex-wrap">
+                  <List title="Cursos Avalados">
+                    <CheckIcon slot="icon" />
+                    <Item>
+                      Todos los cursos ofrecidos por AAPLUS+ cuentan con el
+                      respaldo y aval de la Universidad Venezolana Yacambú, lo
+                      que garantiza la calidad y validez de la formación
+                      recibida.
+                    </Item>
+                  </List>
+                  <List title="Reconocimiento Académico">
+                    <CheckIcon slot="icon" />
+                    <Item>
+                      Este aval no solo refuerza la confianza en nuestros
+                      programas educativos, sino que también asegura que los
+                      títulos obtenidos sean ampliamente reconocidos y
+                      valorados.
+                    </Item>
+                  </List>
+                </div>
               </div>
               <div
                 class="hidden p-4 bg-white rounded-lg dark:bg-gray-800"
                 id="faq"
                 role="tabpanel"
                 aria-labelledby="faq-tab">
-                <div
-                  id="accordion-flush"
-                  data-accordion="collapse"
-                  data-active-classes="bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                  data-inactive-classes="text-gray-500 dark:text-gray-400">
-                  <h2 id="accordion-flush-heading-1">
-                    <button
-                      type="button"
-                      class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
-                      data-accordion-target="#accordion-flush-body-1"
-                      aria-expanded="true"
-                      aria-controls="accordion-flush-body-1">
-                      <span>What is Flowbite?</span>
-                      <svg
-                        data-accordion-icon
-                        class="w-3 h-3 rotate-180 shrink-0"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 10 6">
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 5 5 1 1 5"></path>
-                      </svg>
-                    </button>
-                  </h2>
-                  <div
-                    id="accordion-flush-body-1"
-                    class="hidden"
-                    aria-labelledby="accordion-flush-heading-1">
-                    <div
-                      class="py-5 border-b border-gray-200 dark:border-gray-700">
-                      <p class="mb-2 text-gray-500 dark:text-gray-400">
-                        Flowbite is an open-source library of interactive
-                        components built on top of Tailwind CSS including
-                        buttons, dropdowns, modals, navbars, and more.
-                      </p>
-                      <p class="text-gray-500 dark:text-gray-400">
-                        Check out this guide to learn how to <a
-                          href="/docs/getting-started/introduction/"
-                          class="text-blue-600 dark:text-blue-500 hover:underline"
-                          >get started</a
-                        > and start developing websites even faster with components
-                        on top of Tailwind CSS.
-                      </p>
-                    </div>
-                  </div>
-                  <h2 id="accordion-flush-heading-2">
-                    <button
-                      type="button"
-                      class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
-                      data-accordion-target="#accordion-flush-body-2"
-                      aria-expanded="false"
-                      aria-controls="accordion-flush-body-2">
-                      <span>Is there a Figma file available?</span>
-                      <svg
-                        data-accordion-icon
-                        class="w-3 h-3 rotate-180 shrink-0"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 10 6">
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 5 5 1 1 5"></path>
-                      </svg>
-                    </button>
-                  </h2>
-                  <div
-                    id="accordion-flush-body-2"
-                    class="hidden"
-                    aria-labelledby="accordion-flush-heading-2">
-                    <div
-                      class="py-5 border-b border-gray-200 dark:border-gray-700">
-                      <p class="mb-2 text-gray-500 dark:text-gray-400">
-                        Flowbite is first conceptualized and designed using the
-                        Figma software so everything you see in the library has
-                        a design equivalent in our Figma file.
-                      </p>
-                      <p class="text-gray-500 dark:text-gray-400">
-                        Check out the <a
-                          href="https://flowbite.com/figma/"
-                          class="text-blue-600 dark:text-blue-500 hover:underline"
-                          >Figma design system</a
-                        > based on the utility classes from Tailwind CSS and components
-                        from Flowbite.
-                      </p>
-                    </div>
-                  </div>
-                  <h2 id="accordion-flush-heading-3">
-                    <button
-                      type="button"
-                      class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
-                      data-accordion-target="#accordion-flush-body-3"
-                      aria-expanded="false"
-                      aria-controls="accordion-flush-body-3">
-                      <span
-                        >What are the differences between Flowbite and Tailwind
-                        UI?</span
-                      >
-                      <svg
-                        data-accordion-icon
-                        class="w-3 h-3 rotate-180 shrink-0"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 10 6">
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 5 5 1 1 5"></path>
-                      </svg>
-                    </button>
-                  </h2>
-                  <div
-                    id="accordion-flush-body-3"
-                    class="hidden"
-                    aria-labelledby="accordion-flush-heading-3">
-                    <div
-                      class="py-5 border-b border-gray-200 dark:border-gray-700">
-                      <p class="mb-2 text-gray-500 dark:text-gray-400">
-                        The main difference is that the core components from
-                        Flowbite are open source under the MIT license, whereas
-                        Tailwind UI is a paid product. Another difference is
-                        that Flowbite relies on smaller and standalone
-                        components, whereas Tailwind UI offers sections of
-                        pages.
-                      </p>
-                      <p class="mb-2 text-gray-500 dark:text-gray-400">
-                        However, we actually recommend using both Flowbite,
-                        Flowbite Pro, and even Tailwind UI as there is no
-                        technical reason stopping you from using the best of two
-                        worlds.
-                      </p>
-                      <p class="mb-2 text-gray-500 dark:text-gray-400">
-                        Learn more about these technologies:
-                      </p>
-                      <ul
-                        class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li>
-                          <a
-                            href="https://flowbite.com/pro/"
-                            class="text-blue-600 dark:text-blue-500 hover:underline"
-                            >Flowbite Pro</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            href="https://tailwindui.com/"
-                            rel="nofollow"
-                            class="text-blue-600 dark:text-blue-500 hover:underline"
-                            >Tailwind UI</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                <div class="flex gap-4 justify-between flex-wrap">
+                  <List title="Profesionalización de la Experiencia">
+                    <CheckIcon slot="icon" />
+                    <Item>
+                      A través del convenio, AAPLUS+ y la Universidad Yacambú
+                      ofrecen la posibilidad de validar la experiencia
+                      profesional de los interesados, transformándola en títulos
+                      académicos reconocidos.
+                    </Item>
+                  </List>
+                  <List title="Certificación Oficial">
+                    <CheckIcon slot="icon" />
+                    <Item>
+                      Esta validación y profesionalización se realiza con el
+                      aval de la Secretaría Nacional de Educación Superior,
+                      Ciencia, Tecnología e Innovación (Senescyt) y el Consejo
+                      de Educación Superior (CES), garantizando su legitimidad y
+                      reconocimiento en el ámbito laboral.
+                    </Item>
+                  </List>
                 </div>
               </div>
             </section>
           </div>
         </div>
+      </article>
+    </section>
+
+    <!-- Services -->
+    <section
+      class="bg-gray-50 dark:bg-gray-900 rounded-tl-3xl rounded-br-3xl mb-6">
+      <p
+        class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400 text-center p-4">
+        Si necesitas...
+      </p>
+      <div
+        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-8 lg:px-6">
+        <div class="mt-4 md:mt-0">
+          <Title tag="h3" size="4xl" title="Capacitación" />
+          <List extraClassName="ml-4 mb-6">
+            <Title tag="h4" margin="mb-2" title="Cursos Especializados" />
+            <Item>
+              Ofrecemos una amplia gama de cursos especializados que están
+              diseñados para facilitar el avance académico de los tecnólogos,
+              desde el tercer hasta el cuarto nivel de grado.
+            </Item>
+            <Title
+              tag="h4"
+              margin="mb-2"
+              title="Programas de Formación Continua"
+            />
+            <Item>
+              Estos programas están alineados con las demandas del mercado
+              laboral y cuentan con el respaldo del convenio, asegurando una
+              formación de alta calidad.
+            </Item>
+          </List>
+          <Link
+            href="https://wa.me/593978621123/?text=*Desde la web* \n\nHola quisiera saber más acerca del servicio de *Capacitación*."
+            target="_blank"
+            style="primary">Contactar por Capacitación</Link
+          >
+        </div>
+        <div class="mt-4 md:mt-0">
+          <Title tag="h3" size="4xl" title="Apoyo académico" />
+          <List extraClassName="ml-4 mb-6">
+            <Title tag="h4" margin="mb-2" title="Asesoría Personalizada" />
+            <Item>
+              Proporcionamos asesoría académica a nuestros estudiantes para
+              guiarlos en su proceso de especialización y maestría, asegurando
+              que cada paso esté alineado con sus metas profesionales.
+            </Item>
+            <Title tag="h4" margin="mb-2" title="Validación de Competencias" />
+            <Item>
+              A través del convenio, ofrecemos servicios de validación de
+              competencias adquiridas en la experiencia laboral, facilitando la
+              obtención de títulos académicos reconocidos.
+            </Item>
+          </List>
+          <Link
+            href="https://wa.me/593978621123/?text=*Desde la web* \n\nHola quisiera saber más acerca del servicio de *Asesoría personalizada*"
+            target="_blank"
+            style="inverted">Contactar por Asesoría</Link
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="mb-4 p-4 flex flex-col">
+      <Title tag="h2" size="4xl" margin="my-6" title="Conoce nuestros cursos" />
+      <form class="max-w-xl ms-auto w-full">
+        <div class="flex">
+          <label
+            for="search-dropdown"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            >Your Email</label
+          >
+          <div class="relative w-full">
+            <input
+              type="search"
+              id="searchField"
+              class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-white rounded-lg border-gray-200 border-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+              placeholder="Search Mockups, Logos, Design Templates..."
+              required
+            />
+            <button
+              type="submit"
+              class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              <SearchIcon size="4" />
+              <span class="sr-only">Search</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <article
+        class="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4 p-4"
+        id="coursesContainer">
+        {
+          COURSES.map((course, idx) => {
+            return (
+              <CardText
+                key={course.id}
+                title={course.title}
+                description={course.description}>
+                <ContactButton
+                href=`https://wa.me/593978621123/?text=*Desde la web* \n\nHola quisiera saber más acerca del curso de *${course.title}*`
+                  slot="button"
+                  bgc="blue"
+                  margin="mb-2 mt-auto"
+                  size="sm">
+                  <span slot="content">Estoy interesado(a)</span>
+                  <ArrowRigth size="3.5" extraClassName="ml-2" slot="icon" />
+                </ContactButton>
+              </CardText>
+            );
+          })
+        }
       </article>
     </section>
   </Container>
