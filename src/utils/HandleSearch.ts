@@ -1,6 +1,6 @@
 import DOMPurify from "dompurify";
 
-export default function CoursesSearch() {
+export default function HandleSearch() {
   const $searchField = document.getElementById("search") as HTMLInputElement;
   const $searchReadout = document.getElementById(
     "searchReadout"
@@ -25,8 +25,8 @@ export default function CoursesSearch() {
     const searchTerm: string = DOMPurify.sanitize($searchField.value);
     if (!searchTerm || searchTerm.length === 0) {
       const url = new URL(window.location.href, window.location.origin);
-      url.searchParams.delete('q')
-      window.history.pushState({}, '', url.href)
+      url.searchParams.delete("q");
+      window.history.pushState({}, "", url.href);
     }
     updateSearchReadout(searchTerm);
 

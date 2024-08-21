@@ -12,7 +12,7 @@ import Link from "@components/ui/Link.astro";
 import { COURSES } from "consts/courses";
 import SearchWidget from "@components/SearchWidget.astro";
 import Card from "@components/ui/Courses/Card.astro";
-import CoursesSearch from "../utils/coursesSearch";
+import HandleSearch from "../utils/HandleSearch";
 ---
 
 <Layout title="Servicios">
@@ -276,4 +276,4 @@ import CoursesSearch from "../utils/coursesSearch";
   </Container>
 </Layout>
 
-<CoursesSearch client:only />
+<HandleSearch client:only />
