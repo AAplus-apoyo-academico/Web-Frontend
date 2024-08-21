@@ -9,11 +9,10 @@ import Badge from "@components/ui/Badge.astro";
 import Title from "@components/ui/Title.astro";
 import Certificate from "@components/ui/icons/Certificate.astro";
 import Link from "@components/ui/Link.astro";
-import { COURSES } from "../consts/courses";
-import CardText from "@components/ui/CardText.astro";
-import SearchIcon from "@components/ui/icons/Search.astro";
-import ContactButton from "@components/ui/Courses/ContactButton.astro";
-import ArrowRigth from "@components/ui/icons/ArrowRigth.astro";
+import { COURSES } from "consts/courses";
+import SearchWidget from "@components/SearchWidget.astro";
+import Card from "@components/ui/Courses/Card.astro";
+import CoursesSearch from "../utils/coursesSearch";
 ---
 
 <Layout title="Servicios">
@@ -261,55 +260,20 @@ import ArrowRigth from "@components/ui/icons/ArrowRigth.astro";
     <!-- Courses -->
     <section class="mb-4 p-4 flex flex-col">
       <Title tag="h2" size="4xl" margin="my-6" title="Conoce nuestros cursos" />
-      <form class="max-w-xl ms-auto w-full">
-        <div class="flex">
-          <label
-            for="search-dropdown"
-            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-            >Your Email</label
-          >
-          <div class="relative w-full">
-            <input
-              type="search"
-              id="searchField"
-              class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-white rounded-lg border-gray-200 border-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-              placeholder="Search Mockups, Logos, Design Templates..."
-              required
-            />
-            <button
-              type="submit"
-              class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              <SearchIcon size="4" />
-              <span class="sr-only">Search</span>
-            </button>
-          </div>
-        </div>
-      </form>
+      <SearchWidget />
+      <p id="searchReadout" class="text-center my-2"></p>
 
       <article
         class="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4 p-4"
         id="coursesContainer">
         {
           COURSES.map((course, idx) => {
-            return (
-              <CardText
-                key={course.id}
-                title={course.title}
-                description={course.description}>
-                <ContactButton
-                href=`https://wa.me/593978621123/?text=*Desde la web* \n\nHola quisiera saber más acerca del curso de *${course.title}*`
-                  slot="button"
-                  bgc="blue"
-                  margin="mb-2 mt-auto"
-                  size="sm">
-                  <span slot="content">Estoy interesado(a)</span>
-                  <ArrowRigth size="3.5" extraClassName="ml-2" slot="icon" />
-                </ContactButton>
-              </CardText>
-            );
+            return <Card course={course} />;
           })
         }
       </article>
     </section>
   </Container>
 </Layout>
+
+<CoursesSearch client:only />

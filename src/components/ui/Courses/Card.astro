@@ -1,0 +1,19 @@
+---
+import CardText from "../CardText.astro";
+import ArrowRigth from "../icons/ArrowRigth.astro";
+import ContactButton from "./ContactButton.astro";
+
+const { course } = Astro.props;
+---
+
+<CardText key={course.id} title={course.title} description={course.description}>
+  <ContactButton
+    href={`https://wa.me/593978621123/?text=*Desde la web* \n\nHola quisiera saber más acerca del curso de *${course.title}*`}
+    slot="button"
+    bgc="blue"
+    margin="mb-2 mt-auto"
+    size="sm">
+    <span slot="content">Estoy interesado(a)</span>
+    <ArrowRigth size="4" extraClassName="ml-2" slot="icon" />
+  </ContactButton>
+</CardText>

@@ -1,0 +1,45 @@
+---
+import SearchIcon from "@components/ui/icons/Search.astro";
+---
+
+<form class="max-w-xl ms-auto w-full" id="searchForm">
+  <div class="flex">
+    <label
+      for="search"
+      class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+      Busca entre los cursos
+    </label>
+    <div class="relative w-full">
+      <input
+        type="search"
+        id="search"
+        name="search"
+        minlength="3"
+        class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-white rounded-lg border-gray-200 border-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+        placeholder="Search Mockups, Logos, Design Templates..."
+        required
+      />
+      <button
+        type="submit"
+        class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <SearchIcon size="4" />
+        <span class="sr-only">Search</span>
+      </button>
+    </div>
+  </div>
+</form>
+
+<script>
+  import DOMPurify from "dompurify";
+
+  const $form = document.querySelector("form");
+  $form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData($form);
+    const searchTerm = DOMPurify.sanitize(formData.get("search")?.toString());
+    const url = new URL(window.location.href, window.location.origin);
+    if (!searchTerm || searchTerm.length === 0) return;
+    url.searchParams.set("q", searchTerm);
+    history.pushState({}, "", url);
+  });
+</script>
