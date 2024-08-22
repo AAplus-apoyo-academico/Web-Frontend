@@ -42,33 +42,35 @@ const features = [
 ];
 ---
 
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Todo lo que necesitas y nosotros podemos dar.
-  </h2>
-  <p class="text-lg mt-4 text-slate-600 dark:text-gray-300">
-    En AAplus nos enorgullecemos de ofrecer una amplia gama de <strong
-      >servicios</strong
-    >
-    educativos diseñados para satisfacer las necesidades de nuestros estudiantes
-    y ayudarles a alcanzar sus metas académicas y profesionales.
-  </p>
-</div>
+<section class="">
+  <div class="mt-16 md:mt-0">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      Todo lo que necesitas y nosotros podemos dar.
+    </h2>
+    <p class="text-lg mt-4 text-slate-600 dark:text-gray-300">
+      En AAplus nos enorgullecemos de ofrecer una amplia gama de <strong
+        >servicios</strong
+      >
+      educativos diseñados para satisfacer las necesidades de nuestros estudiantes
+      y ayudarles a alcanzar sus metas académicas y profesionales.
+    </p>
+  </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+    {
+      features.map((item) => (
+        <div class="flex gap-4 items-start">
+          <div class="mt-1 bg-blue-600 rounded-full  p-2 w-8 h-8 shrink-0">
+            <Icon class="text-white" name={item.icon} />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+            <p class="text-slate-500 mt-2 leading-relaxed dark:text-gray-400">
+              {item.description}
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed dark:text-gray-400">
-            {item.description}
-          </p>
-        </div>
-      </div>
-    ))
-  }
-</div>
+      ))
+    }
+  </div>
+</section>

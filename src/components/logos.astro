@@ -6,23 +6,35 @@ import IconShieldCheck from "./ui/ShieldCheck.astro";
 <div class="mt-24">
   <h2 class="text-center text-slate-500 dark:text-gray-200">Respaldados por</h2>
   <ul class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-    <Item title="Senescyt" tooltipID="senescyt">
-      <IconShieldCheck />
+    <Item
+      title="Senescyt"
+      tooltipID="senescyt"
+      bgConfig="bg-blue-700 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700"
+      colorConfig="text-white">
+      <IconShieldCheck color="white" />
       <span slot="tooltipContent">
         Asegura que los cursos cuentan con el respaldo de la Secretaría Nacional
         de Educación Superior, Ciencia, Tecnología e Innovación, otorgándoles
         validez académica.
       </span>
     </Item>
-    <Item title="Ministerio de Trabajo" tooltipID="minist-trabajo">
-      <IconShieldCheck />
+    <Item
+      title="Ministerio de Trabajo"
+      tooltipID="minist-trabajo"
+      bgConfig="bg-blue-700 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700"
+      colorConfig="text-white">
+      <IconShieldCheck color="white" />
       <span slot="tooltipContent">
         Garantiza que los cursos cumplen con los estándares oficiales y son
         reconocidos en el mercado laboral.
       </span>
     </Item>
-    <Item title="Empresas de Prácticas" tooltipID="companies">
-      <IconShieldCheck />
+    <Item
+      title="Empresas de Prácticas"
+      tooltipID="companies"
+      bgConfig="bg-blue-700 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700"
+      colorConfig="text-white">
+      <IconShieldCheck color="white" />
       <span slot="tooltipContent">
         Los estudiantes tienen la oportunidad de realizar prácticas en empresas
         de renombre, lo que les proporciona una certificación adicional que

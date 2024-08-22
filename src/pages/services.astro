@@ -259,7 +259,12 @@ import HandleSearch from "../utils/HandleSearch";
 
     <!-- Courses -->
     <section class="mb-4 p-4 flex flex-col">
-      <Title tag="h2" size="4xl" margin="my-6" title="Conoce nuestros cursos" />
+      <Title
+        tag="h2"
+        size="4xl"
+        margin="my-6"
+        title=`Conoce nuestros cursos (${COURSES.length})`
+      />
       <SearchWidget />
       <p id="searchReadout" class="text-center my-2"></p>
 

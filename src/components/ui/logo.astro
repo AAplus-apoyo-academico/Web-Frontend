@@ -1,7 +1,14 @@
 ---
 import Tooltip from "./Tooltip.astro";
 
-const { title, tooltipID, ...rest } = Astro.props;
+const {
+  title,
+  tooltipID,
+  colorConfig = "text-gray-900 dark:text-white",
+  bgConfig = "bg-gray-50 hover:bg-gray-100 dark:bg-gray-600 dark:hover:bg-gray-500",
+  ...rest
+} = Astro.props;
+
 const prefix = "tooltip";
 const fullTooltipId = `${prefix}-${tooltipID}`;
 
@@ -13,7 +20,7 @@ const renderTooltip = () => {
 <li
   {...renderTooltip() ? { "data-tooltip-target": fullTooltipId } : {}}
   {...rest}
-  class="flex items-center gap-2 p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+  class=`flex items-center gap-2 p-3 text-base font-bold ${colorConfig} ${bgConfig} rounded-lg group hover:shadow`>
   <slot />
   <span class="flex-1 whitespace-nowrap">{title}</span>
   {
