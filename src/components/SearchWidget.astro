@@ -1,6 +1,5 @@
 ---
 import SearchIcon from "@components/ui/icons/Search.astro";
-import SearchFunction from "../utils/SearchWidget";
 ---
 
 <form class="max-w-xl ms-auto w-full" id="searchForm">
@@ -30,4 +29,4 @@ import SearchFunction from "../utils/SearchWidget";
   </div>
 </form>
 
-<SearchFunction client:only />
+<script src="../utils/SearchWidget.js"></script>

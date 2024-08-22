@@ -12,7 +12,6 @@ import Link from "@components/ui/Link.astro";
 import { COURSES } from "consts/courses";
 import SearchWidget from "@components/SearchWidget.astro";
 import Card from "@components/ui/Courses/Card.astro";
-import HandleSearch from "../utils/HandleSearch";
 ---
 
 <Layout title="Servicios">
@@ -32,6 +31,8 @@ import HandleSearch from "../utils/HandleSearch";
           <Title
             tag="h2"
             size="4xl"
+            colorLigth="yellow-300"
+            colorDark="yellow-300"
             extraClassName="flex items-center gap-2 flex-wrap"
             title="Convenio con Universidad Yacambú">
             <Badge
@@ -207,7 +208,13 @@ import HandleSearch from "../utils/HandleSearch";
       <div
         class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-8 lg:px-6">
         <div class="mt-4 md:mt-0">
-          <Title tag="h3" size="4xl" title="Capacitación" />
+          <Title
+            tag="h3"
+            size="4xl"
+            title="Capacitación"
+            colorLigth="yellow-400"
+            colorDark="yellow-300"
+          />
           <List extraClassName="ml-4 mb-6">
             <Title tag="h4" margin="mb-2" title="Cursos Especializados" />
             <Item>
@@ -233,7 +240,13 @@ import HandleSearch from "../utils/HandleSearch";
           >
         </div>
         <div class="mt-4 md:mt-0">
-          <Title tag="h3" size="4xl" title="Apoyo académico" />
+          <Title
+            tag="h3"
+            size="4xl"
+            title="Apoyo académico"
+            colorLigth="yellow-400"
+            colorDark="yellow-300"
+          />
           <List extraClassName="ml-4 mb-6">
             <Title tag="h4" margin="mb-2" title="Asesoría Personalizada" />
             <Item>
@@ -281,4 +294,5 @@ import HandleSearch from "../utils/HandleSearch";
   </Container>
 </Layout>
 
-<HandleSearch client:only />
+<!-- <HandleSearch client:only /> -->
+<script src="../utils/HandleSearch.js"></script>
