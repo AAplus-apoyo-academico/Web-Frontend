@@ -4,6 +4,7 @@ import Footer from "@components/Footer.astro";
 import Navbar from "@components/navbar/Navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import "@fontsource-variable/bricolage-grotesque";
+import WhatsAppIcon from "@components/ui/icons/WhatsApp.astro";
 
 export interface Props {
   title: string;
@@ -57,9 +58,15 @@ const makeTitle = title
     />
   </head>
   <body
-    class="dark:text-white h-full bg-[radial-gradient(circle_500px_at_50%_200px,#d1ecff,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#4d7a9b,transparent)] dark:bg-gray-700">
+    class="dark:text-white relative h-full bg-[radial-gradient(circle_500px_at_50%_200px,#d1ecff,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#4d7a9b,transparent)] dark:bg-gray-700">
     <Navbar />
     <slot />
+    <a
+      href="https://wa.me/593978621123/"
+      target="_blank"
+      class="fixed bottom-4 right-4 p-4 bg-[#25d366] rounded-full animate-bounce hover:animate-none transition-all">
+      <WhatsAppIcon size="8" color="white" />
+    </a>
     <Footer />
     <style is:global>
       /* Improve Page speed */

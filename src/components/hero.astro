@@ -2,7 +2,7 @@
 import { Picture } from "astro:assets";
 import heroImage from "assets/hero.png";
 import Link from "@components/ui/Link.astro";
-import { Icon } from "astro-icon/components";
+import WhatsAppIcon from "./ui/icons/WhatsApp.astro";
 ---
 
 <main
@@ -33,12 +33,11 @@ import { Icon } from "astro-icon/components";
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
+        href="https://wa.me/593978621123/"
         target="_blank"
-        class="flex gap-1 items-center justify-center text-white bg-green-700 hover:bg-green-800"
+        class="flex gap-1 items-center justify-center text-white bg-[#25d366] hover:bg-green-800"
         rel="noopener">
-        <Icon name="whatsapp" />
+        <WhatsAppIcon size="4" color="white" />
         Contáctanos
       </Link>
     </div>
