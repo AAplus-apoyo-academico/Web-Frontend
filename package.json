@@ -15,6 +15,7 @@
     "@astrojs/react": "^3.6.2",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.8.0",
     "@fontsource-variable/bricolage-grotesque": "^5.0.6",
     "@fontsource-variable/inter": "^5.0.18",
     "@github/typing-effect-element": "^0.1.0",
